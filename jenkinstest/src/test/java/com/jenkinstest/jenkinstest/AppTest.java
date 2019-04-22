@@ -1,38 +1,27 @@
 package com.jenkinstest.jenkinstest;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.junit.Test;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+public class AppTest {
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	final static App app = new App();
+	final static int a = 23, b = 27;
+
+	@Test
+	public void testAdd() {
+		assertEquals(50, app.add(a, b));
+	}
+
+	@Test
+	public void testSub() {
+		assertEquals(-4, app.sub(a, b));
+	}
+
+	@Test
+	public void testDiv() {
+		assertEquals(1, app.div(b, a));
+	}
+
 }
