@@ -1,7 +1,7 @@
 package com.jenkinstest.jenkinstest;
 
 
-public class App implements Calculatrice {
+public class App {
 
 	public static void main(String[] args) {
 		App app = new App();
@@ -16,31 +16,31 @@ public class App implements Calculatrice {
 
 			} catch (Exception e) {
 				System.out.println("invalid integer argument  between entries :  " + args[0] + " or " + args[1]);
-				System.exit(0);
+				System.exit(1);
 			}
 
 			System.out.println(a + " ET " + b);
 			System.out.println(
 					"ADD = " + app.add(a, b) + "\n" + "SUB = " + app.sub(a, b) + "\n" + "DIV = " + app.div(a, b));
 		} else {
-			System.exit(0);
+			System.exit(1);
 		}
 
 	}
 
-	@Override
+
 	public int add(int a, int b) {
 
 		return a + b;
 	}
 
-	@Override
+
 	public int sub(int a, int b) {
 
 		return a - b;
 	}
 
-	@Override
+
 	public int div(int a, int b) {
 
 		int c = 0;
